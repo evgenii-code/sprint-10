@@ -24,7 +24,7 @@
                           class="form__input" 
                           type="text" 
                           name="name" 
-                          pattern="([А-ЯЁ][а-яё\-?]*)+" 
+                          pattern="([А-ЯЁ][а-яё]*(?![А-ЯЁ])-?)+[^-]" 
                           minlength="2"
                           maxlength="20"
                           placeholder="Имя" 
@@ -46,7 +46,7 @@
                           type="text"
                           name="tel"
                           placeholder="Телефон"
-                          pattern="\+?\d[\(\- ]{0,2}\d{3}[\)\- ]{0,2}([\d\-]{2,3}){3}"
+                          pattern="\+?\d[\(\- ]{0,2}\d{3}[\)\- ]{0,2}\d{3}(-?\d{2}){2}"
                           minlength=""
                           maxlength="18"
                           required/>
@@ -57,7 +57,7 @@
                           class="form__input" 
                           type="text" 
                           name="url" 
-                          pattern="https?:\/{2}(w{3}\.)?([-0-9a-z\.]+?)+(:\d{2,5})?[0-9a-z\/]*#?" 
+                          pattern="https?:\/{2}(w{3}\.)?((\d{1,3}\.?){4}|([-a-z\d]+\.[a-z]{2,}))[:]?((?!0{1,5})\d{2,5})?(\/[-a-z\d]+)*[#\/]?" 
                           placeholder="Ваш сайт" 
                           required/>
                         <span class="form__error">URL в формате: http://mysite.ru</span>
